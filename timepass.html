@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SORRYYYYY ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to bottom, #000428, #004e92);
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+      position: relative;
+    }
+
+    .container {
+      text-align: center;
+      z-index: 1;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 8vw;
+      background: linear-gradient(to right, #ff416c, #ff4b2b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 2s infinite ease-in-out;
+    }
+
+    @keyframes glow {
+      0%, 100% { text-shadow: 0 0 10px #ff416c; }
+      50% { text-shadow: 0 0 20px #ff4b2b; }
+    }
+
+    .message {
+      font-size: 4vw;
+      margin-top: 15px;
+      opacity: 0;
+      animation: fadeIn 3s forwards;
+      animation-delay: 2s;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    .heart {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background-color: #ff4b2b;
+      transform: rotate(-45deg);
+      animation: floatUp 10s linear infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background-color: #ff4b2b;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -20px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 20px;
+      top: 0;
+    }
+
+    .heart span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 10px;
+      color: white;
+      font-weight: bold;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) rotate(-45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(-45deg);
+        opacity: 0;
+      }
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 10px 20px;
+      font-size: 4vw;
+      background: #ffffff20;
+      color: white;
+      border: 2px solid white;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: white;
+      color: #ff4b2b;
+    }
+
+    .popup {
+      position: absolute;
+      bottom: 60px;
+      background: white;
+      color: #333;
+      padding: 12px 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(255, 75, 43, 0.6);
+      display: none;
+      animation: popFade 0.5s ease;
+      font-size: 3.5vw;
+    }
+
+    @keyframes popFade {
+      from { transform: scale(0.5); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    @media screen and (min-width: 600px) {
+      h1 { font-size: 3rem; }
+      .message { font-size: 1.2rem; }
+      button { font-size: 1rem; }
+      .popup { font-size: 1rem; }
+    }
+
+    .gifs {
+      margin-top: 20px;
+    }
+
+    .gifs img {
+      width: 60px;
+      margin: 0 5px;
+    }
+  </style>
+</head>
+<body>
+  <!-- 🎵 Background Music (No download needed) -->
+  <audio autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="container">
+    <h1>SORRYYYYY ❤️</h1>
+    <div class="message">Paruu, I messed up... I'm really sorry 🥺💔<br>Please forgive me 🙏</div>
+    <div class="gifs">
+      <img src="https://media.tenor.com/Er0gykUqOHIAAAAi/sad-sorry.gif" alt="Sad Sorry Gif" />
+      <img src="https://media.tenor.com/8vXvEM4R0iYAAAAi/crying-cat-sad.gif" alt="Crying Cat" />
+      <img src="https://media.tenor.com/l6sE8_8TxyUAAAAi/sorry-pikachu.gif" alt="Sorry Pikachu" />
+    </div>
+    <button onclick="showPopup()">Tap for a surprise 💌</button>
+    <div class="popup" id="popup">You mean the world to me, Paruu 💖<br>Let’s fix this, together. 🤝</div>
+  </div>
+
+  <!-- Floating hearts with "Sorry" text -->
+  <script>
+    for (let i = 0; i < 25; i++) {
+      let heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = 4 + Math.random() * 6 + 's';
+
+      let span = document.createElement('span');
+      span.innerText = 'Sorry';
+      heart.appendChild(span);
+
+      document.body.appendChild(heart);
+    }
+
+    function showPopup() {
+      const popup = document.getElementById('popup');
+      popup.style.display = 'block';
+      setTimeout(() => popup.style.display = 'none', 4000);
+    }
+  </script>
+</body>
+</html>
